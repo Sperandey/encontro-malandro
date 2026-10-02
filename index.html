@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17231d">
+  <meta name="description" content="Conheça o Encontro Malandro, os trabalhos disponíveis e como conversar diretamente pelo WhatsApp.">
+  <title>Encontro Malandro | Consultas e Trabalhos</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Encontro Malandro | Consultas e Trabalhos">
+  <meta property="og:description" content="Conheça o Encontro Malandro, os trabalhos disponíveis e como conversar diretamente pelo WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --night: #17231d;
+      --night-soft: #24372c;
+      --paper: #f5f1e8;
+      --paper-dark: #e9e3d8;
+      --ink: #1d2922;
+      --muted: #657168;
+      --red: #a53e34;
+      --lime: #d5e38d;
+      --line: rgba(29, 41, 34, .17);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { width: 24px; height: 1px; background: currentColor; content: ""; }
+    .section-title { max-width: 700px; margin: 0; font: 600 clamp(38px, 5vw, 64px)/1.04 var(--serif); }
+    .section-copy { max-width: 540px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; gap: 11px; padding: 0 20px; border: 1px solid transparent; border-radius: 2px; background: var(--lime); color: var(--night); font-size: 12px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); background: #e2edaa; }
+    .button svg { width: 17px; height: 17px; }
+    .button--outline { border-color: rgba(245,241,232,.45); background: transparent; color: var(--paper); }
+    .button--outline:hover { background: rgba(245,241,232,.1); }
+    .button--dark { background: var(--night); color: var(--paper); }
+    .button--dark:hover { background: var(--night-soft); }
+
+    .header { position: absolute; z-index: 5; top: 0; left: 0; width: 100%; color: var(--paper); }
+    .header-inner { display: flex; height: 88px; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(245,241,232,.22); }
+    .brand { display: flex; align-items: center; gap: 11px; font: 600 17px var(--serif); }
+    .brand-mark { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(213,227,141,.75); border-radius: 50%; color: var(--lime); font: 600 15px var(--serif); }
+    .nav { display: flex; align-items: center; gap: 27px; font-size: 11px; font-weight: 600; }
+    .nav a:not(.button) { color: rgba(245,241,232,.8); transition: color .2s ease; }
+    .nav a:not(.button):hover { color: var(--lime); }
+    .nav .button { min-height: 42px; padding-inline: 15px; }
+    .menu-toggle { display: none; width: 44px; height: 44px; place-items: center; border: 1px solid rgba(245,241,232,.4); background: transparent; color: var(--paper); cursor: pointer; }
+    .menu-toggle svg { width: 20px; height: 20px; }
+
+    .hero { position: relative; display: flex; min-height: 700px; align-items: center; overflow: hidden; background: var(--night); color: var(--paper); }
+    .hero::before { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,30,24,.95), rgba(18,30,24,.78) 45%, rgba(18,30,24,.18)), url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85") center 48%/cover; content: ""; }
+    .hero::after { position: absolute; right: 5%; bottom: -220px; width: 470px; height: 470px; border: 1px solid rgba(213,227,141,.22); border-radius: 50%; box-shadow: 0 0 0 42px rgba(213,227,141,.035), 0 0 0 86px rgba(213,227,141,.025); content: ""; }
+    .hero-content { position: relative; z-index: 1; padding-top: 85px; }
+    .hero .eyebrow { color: var(--lime); }
+    .hero h1 { max-width: 760px; margin: 0; font: 600 clamp(56px, 8vw, 98px)/.99 var(--serif); }
+    .hero h1 em { color: var(--lime); font-weight: 500; }
+    .hero-copy { max-width: 475px; margin: 25px 0 30px; color: rgba(245,241,232,.78); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 48px; color: rgba(245,241,232,.68); font-size: 10px; }
+    .hero-note::before { width: 32px; height: 1px; background: var(--lime); content: ""; }
+
+    .numbers { background: var(--lime); }
+    .numbers-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .number-item { min-height: 118px; display: flex; align-items: center; gap: 15px; padding: 20px 28px; border-right: 1px solid rgba(23,35,29,.18); }
+    .number-item:first-child { padding-left: 0; }
+    .number-item:last-child { border: 0; }
+    .number-value { color: var(--red); font: 600 27px var(--serif); white-space: nowrap; }
+    .number-item p { max-width: 175px; margin: 0; font-size: 11px; font-weight: 600; line-height: 1.45; }
+    .number-item small { display: block; margin-top: 4px; color: rgba(23,35,29,.7); font-size: 9px; font-weight: 500; }
+
+    .about { padding: 116px 0; }
+    .about-grid { display: grid; grid-template-columns: .94fr 1.06fr; align-items: center; gap: 9%; }
+    .about-image { position: relative; min-height: 535px; background: var(--night-soft); }
+    .about-image img { width: 100%; height: 535px; object-fit: cover; filter: saturate(.72); }
+    .image-note { position: absolute; right: -20px; bottom: 25px; width: 185px; padding: 18px; background: var(--red); color: white; font: 500 17px/1.3 var(--serif); }
+    .about-copy .section-copy { margin: 23px 0 14px; }
+    .placeholder-note { display: inline-block; margin-top: 12px; padding: 7px 9px; background: rgba(165,62,52,.1); color: #80342c; font-size: 10px; font-weight: 700; }
+
+    .services { padding: 105px 0 115px; background: var(--paper-dark); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 43px; }
+    .section-heading .section-copy { max-width: 370px; margin: 0 0 4px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .service-card { min-height: 310px; padding: 30px 28px 28px 0; border-right: 1px solid var(--line); }
+    .service-card + .service-card { padding-left: 28px; }
+    .service-card:last-child { border-right: 0; }
+    .service-index { color: var(--red); font: 500 13px var(--serif); }
+    .service-card h3 { margin: 28px 0 12px; font: 600 25px var(--serif); }
+    .service-card p { min-height: 72px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+    .service-card .text-link { margin-top: 20px; }
+    .text-link { display: inline-flex; align-items: center; gap: 9px; color: var(--red); font-size: 11px; font-weight: 700; }
+    .text-link svg { width: 16px; height: 16px; transition: transform .2s ease; }
+    .text-link:hover svg { transform: translateX(4px); }
+
+    .how { position: relative; overflow: hidden; padding: 105px 0; background: var(--night); color: var(--paper); }
+    .how::after { position: absolute; top: -330px; right: -90px; width: 620px; height: 620px; border: 1px solid rgba(213,227,141,.2); border-radius: 50%; box-shadow: 0 0 0 45px rgba(213,227,141,.025), 0 0 0 90px rgba(213,227,141,.02); content: ""; }
+    .how-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 12%; }
+    .how .eyebrow { color: var(--lime); }
+    .how .section-copy { margin: 20px 0 28px; color: rgba(245,241,232,.68); }
+    .steps { border-top: 1px solid rgba(245,241,232,.25); }
+    .step { display: grid; grid-template-columns: 50px 1fr; gap: 15px; padding: 20px 0; border-bottom: 1px solid rgba(245,241,232,.25); }
+    .step-number { color: var(--lime); font: 500 13px var(--serif); }
+    .step h3 { margin: 0 0 6px; font: 500 18px var(--serif); }
+    .step p { max-width: 350px; margin: 0; color: rgba(245,241,232,.67); font-size: 11px; line-height: 1.7; }
+
+    .feedback { padding: 110px 0; }
+    .feedback .section-heading { margin-bottom: 38px; }
+    .feedback-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .feedback-card { display: flex; min-height: 240px; flex-direction: column; padding: 25px; border: 1px solid var(--line); background: rgba(255,255,255,.25); }
+    .stars { color: var(--red); font-size: 13px; letter-spacing: 2px; }
+    .feedback-card blockquote { flex: 1; margin: 22px 0; color: #4f5b52; font: 500 17px/1.55 var(--serif); }
+    .feedback-card footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 10px; }
+    .feedback-card footer strong { color: var(--ink); font-weight: 600; }
+    .demo-tag { padding: 5px 7px; background: var(--paper-dark); font-size: 8px; font-weight: 700; letter-spacing: .06em; }
+
+    .contact { padding: 83px 0; background: var(--red); color: white; }
+    .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 38px; }
+    .contact .eyebrow { color: var(--lime); }
+    .contact h2 { max-width: 640px; margin: 0; font: 600 clamp(40px, 5vw, 64px)/1.04 var(--serif); }
+    .contact-copy { max-width: 440px; margin: 16px 0 0; color: rgba(255,255,255,.78); font-size: 13px; line-height: 1.7; }
+    .contact .button { flex: 0 0 auto; }
+    .footer { padding: 28px 0; background: #111a15; color: rgba(245,241,232,.74); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .footer .brand { color: var(--paper); font-size: 15px; }
+    .footer-copy { max-width: 340px; margin: 9px 0 0; color: rgba(245,241,232,.55); font-size: 10px; line-height: 1.6; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 10px; }
+    .footer-links a:hover { color: var(--lime); }
+    .copyright { font-size: 9px; }
+    .reveal { opacity: 0; transform: translateY(17px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 36px, 620px); }
+      .header-inner { height: 76px; }
+      .menu-toggle { display: grid; }
+      .nav { position: absolute; top: 76px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 10px 18px 20px; background: var(--night); }
+      .nav.is-open { display: flex; flex-direction: column; }
+      .nav a:not(.button) { padding: 13px 3px; border-bottom: 1px solid rgba(245,241,232,.13); }
+      .nav .button { margin-top: 14px; }
+      .hero { min-height: 665px; }
+      .hero::before { background-position: 58% center; }
+      .hero::after { right: -260px; }
+      .hero h1 { font-size: clamp(54px, 12vw, 82px); }
+      .numbers-grid { grid-template-columns: 1fr; padding-block: 7px; }
+      .number-item, .number-item:first-child { min-height: 76px; padding: 10px 0; border-right: 0; border-bottom: 1px solid rgba(23,35,29,.18); }
+      .number-item:last-child { border-bottom: 0; }
+      .number-value { width: 130px; font-size: 23px; }
+      .about { padding: 78px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 42px; }
+      .about-image { width: calc(100% - 14px); min-height: 405px; }
+      .about-image img { height: 405px; }
+      .image-note { right: -14px; }
+      .services { padding: 78px 0; }
+      .section-heading { display: block; }
+      .section-heading .section-copy { margin-top: 17px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card, .service-card + .service-card { min-height: 0; padding: 25px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .service-card:last-child { border-bottom: 0; }
+      .service-card h3 { margin-top: 17px; }
+      .service-card p { min-height: 0; }
+      .how { padding: 78px 0; }
+      .how-grid { grid-template-columns: 1fr; gap: 35px; }
+      .how::after { top: auto; right: -370px; bottom: -300px; }
+      .feedback { padding: 78px 0; }
+      .feedback-grid { grid-template-columns: 1fr; }
+      .feedback-card { min-height: 205px; }
+      .contact { padding: 68px 0; }
+      .contact-inner { align-items: flex-start; flex-direction: column; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .wrap { width: calc(100% - 32px); }
+      .brand { font-size: 15px; }
+      .hero { min-height: 650px; }
+      .hero h1 { font-size: clamp(36px, 12vw, 47px); }
+      .hero-copy { font-size: 14px; }
+      .hero-actions { max-width: 285px; align-items: stretch; flex-direction: column; }
+      .hero-note { margin-top: 36px; }
+      .about-image, .about-image img { min-height: 350px; height: 350px; }
+      .image-note { width: 160px; padding: 15px; font-size: 15px; }
+      .section-title { font-size: 39px; }
+      .number-value { width: 116px; font-size: 21px; }
+      .footer-links { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Encontro Malandro, início"><span class="brand-mark" aria-hidden="true">EM</span><span>Encontro Malandro</span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#feedbacks">Feedbacks</a><a href="#contato">Contato</a>
+        <a class="button" data-whatsapp href="https://wa.me/" target="_blank" rel="noopener noreferrer">Falar pelo WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-content">
+        <p class="eyebrow">Encontro Malandro</p>
+        <h1>Conhecimento,<br>orientação e <em>presença.</em></h1>
+        <p class="hero-copy">Um espaço para conhecer os trabalhos, entender as possibilidades de atendimento e conversar com respeito sobre o que você procura.</p>
+        <div class="hero-actions">
+          <a class="button" href="#sobre">Conheça nosso trabalho <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a class="button button--outline" data-whatsapp href="https://wa.me/" target="_blank" rel="noopener noreferrer">Falar pelo WhatsApp</a>
+        </div>
+        <div class="hero-note">Atendimento direto, com conversa e orientação</div>
+      </div>
+    </section>
+
+    <section class="numbers" aria-label="Números do Encontro Malandro">
+      <div class="wrap numbers-grid">
+        <!-- PLACEHOLDER: substituir pelos números confirmados pelo cliente antes da publicação. -->
+        <div class="number-item"><span class="number-value">[INSERIR]</span><p>Consultas realizadas<small>PLACEHOLDER — confirmar dado</small></p></div>
+        <div class="number-item"><span class="number-value">[INSERIR]</span><p>Pessoas atendidas<small>PLACEHOLDER — confirmar dado</small></p></div>
+        <div class="number-item"><span class="number-value">[INSERIR]</span><p>Anos de experiência<small>PLACEHOLDER — confirmar dado</small></p></div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="wrap about-grid">
+        <div class="about-image reveal">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1100&q=85" alt="Horizonte sobre o mar em tons suaves" loading="lazy">
+          <div class="image-note">Cada história merece espaço e atenção.</div>
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">Sobre o encontro</p>
+          <h2 class="section-title">Um trabalho feito de escuta e propósito.</h2>
+          <!-- PLACEHOLDER: substituir este texto demonstrativo por apresentação, história, experiência e forma de trabalho reais. -->
+          <p class="section-copy">Este espaço apresenta a história do Encontro Malandro, a trajetória de quem conduz o trabalho e a forma como cada atendimento acontece. O conteúdo final será construído com as informações fornecidas pelo responsável.</p>
+          <p class="placeholder-note">CONTEÚDO DEMONSTRATIVO — personalizar com o cliente</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicos">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Serviços</p><h2 class="section-title">Conheça nossos trabalhos.</h2></div>
+          <p class="section-copy">Converse diretamente para entender os detalhes, as condições e qual atendimento pode fazer sentido para você.</p>
+        </div>
+        <div class="service-grid reveal">
+          <article class="service-card">
+            <span class="service-index">01 / TRABALHO</span><h3>Trabalho Amoroso</h3>
+            <!-- PLACEHOLDER: substituir pela descrição aprovada pelo cliente. -->
+            <p>[INSERIR DESCRIÇÃO DO TRABALHO AMOROSO]</p>
+            <a class="text-link" data-whatsapp href="https://wa.me/" target="_blank" rel="noopener noreferrer">Tenho interesse <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+          </article>
+          <article class="service-card">
+            <span class="service-index">02 / ATENDIMENTO</span><h3>Consultas</h3>
+            <!-- PLACEHOLDER: substituir pela descrição aprovada pelo cliente. -->
+            <p>[INSERIR DESCRIÇÃO DAS CONSULTAS E COMO FUNCIONAM]</p>
+            <a class="text-link" data-whatsapp href="https://wa.me/" target="_blank" rel="noopener noreferrer">Tenho interesse <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+          </article>
+          <article class="service-card">
+            <span class="service-index">03 / OUTROS</span><h3>Outros trabalhos</h3>
+            <!-- PLACEHOLDER: incluir somente serviços confirmados pelo cliente. -->
+            <p>[INSERIR NOME E DESCRIÇÃO DE OUTRO SERVIÇO]</p>
+            <a class="text-link" data-whatsapp href="https://wa.me/" target="_blank" rel="noopener noreferrer">Saiba mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="como-funciona">
+      <div class="wrap how-grid">
+        <div class="reveal">
+          <p class="eyebrow">Como funciona</p><h2 class="section-title">O primeiro passo é uma conversa.</h2>
+          <p class="section-copy">O site apresenta o trabalho. O atendimento e o esclarecimento de dúvidas continuam diretamente pelo WhatsApp, sem cadastro ou agendamento por aqui.</p>
+          <a class="button" data-whatsapp href="https://wa.me/" target="_blank" rel="noopener noreferrer">Quero saber mais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </div>
+        <div class="steps reveal">
+          <div class="step"><span class="step-number">01</span><div><h3>Conheça o trabalho</h3><p>Veja as informações disponíveis nesta página e identifique o que gostaria de saber.</p></div></div>
+          <div class="step"><span class="step-number">02</span><div><h3>Escolha o que quer conhecer</h3><p>Os serviços são apresentados como ponto de partida para uma conversa.</p></div></div>
+          <div class="step"><span class="step-number">03</span><div><h3>Entre em contato</h3><p>Os botões abrem uma conversa no WhatsApp com uma mensagem opcional pré-preenchida.</p></div></div>
+          <div class="step"><span class="step-number">04</span><div><h3>Converse diretamente</h3><p>O responsável explica os próximos passos e esclarece suas dúvidas pelo WhatsApp.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback" id="feedbacks">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Feedbacks</p><h2 class="section-title">O que nossos clientes dizem.</h2></div>
+          <p class="section-copy">Depoimentos reais serão publicados somente com autorização de cada pessoa.</p>
+        </div>
+        <div class="feedback-grid reveal">
+          <!-- PLACEHOLDER: substituir pelo depoimento exato e autorizado; não publicar exemplos como relatos reais. -->
+          <article class="feedback-card"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>[INSERIR DEPOIMENTO AUTORIZADO]</blockquote><footer><strong>[NOME OU IDENTIFICAÇÃO]</strong><span class="demo-tag">PLACEHOLDER</span></footer></article>
+          <article class="feedback-card"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>[INSERIR DEPOIMENTO AUTORIZADO]</blockquote><footer><strong>[NOME OU IDENTIFICAÇÃO]</strong><span class="demo-tag">PLACEHOLDER</span></footer></article>
+          <article class="feedback-card"><span class="stars" aria-hidden="true">★★★★★</span><blockquote>[INSERIR DEPOIMENTO AUTORIZADO]</blockquote><footer><strong>[NOME OU IDENTIFICAÇÃO]</strong><span class="demo-tag">PLACEHOLDER</span></footer></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="wrap contact-inner">
+        <div><p class="eyebrow">Contato</p><h2>Quer saber mais?</h2><p class="contact-copy">Entre em contato e converse diretamente com o responsável pelo Encontro Malandro.</p></div>
+        <a class="button" data-whatsapp href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.2A8 8 0 1 1 20 11.5Z"/><path d="M9 9.2c.5 2.2 2 3.7 4.2 4.3l1-1 2 .8c-.2 1.2-1 1.8-2.2 1.8-3.4-.2-6.2-3-6.4-6.4 0-1.2.6-2 1.8-2.2l.8 2-1.2.7Z"/></svg>
+          Falar pelo WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">EM</span><span>Encontro Malandro</span></a><p class="footer-copy">Conheça o trabalho, entenda as possibilidades e fale diretamente pelo WhatsApp.</p></div>
+      <div class="footer-links"><a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#como-funciona">Como funciona</a><a href="#feedbacks">Feedbacks</a><a href="#contato">Contato</a><a data-whatsapp href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp</a><span class="copyright">© <span id="year"></span> Encontro Malandro</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const WHATSAPP_LINK = 'https://wa.me/554884614759?text=Ol%C3%A1!%20Gostaria%20de%20entender%20como%20funciona%20o%20atendimento';
+    document.querySelectorAll('[data-whatsapp]').forEach((link) => {
+      link.href = WHATSAPP_LINK;
+    });
+
+    const menuButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('#site-nav');
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Abrir menu' : 'Fechar menu');
+      nav.classList.toggle('is-open', !isOpen);
+    });
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menu');
+    }));
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    } else {
+      document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>
